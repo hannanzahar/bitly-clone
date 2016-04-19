@@ -1,2 +1,29 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<header>
+<h1>Shortsy</h1>
+
+<section>
+<p>Insert your url here</p>
+</section>
+<form action="/urls" method="post">
+	<input id="type" type="text" name="long_url">
+	<input id="send" type="submit" value="shortsy">
+</form>
+</header>
+
+
+<nav>
+<p>Checkout shortsy's short links</p>
+<p>
+<a href= "/table" >
+Here	
+</a></p>
+</nav> 
+
+<content>
+<% unless @url.nil? %>
+<p class="long" > You have inluded <%= @url.long_url %> into the database. </p>
+<p class="short" > Your short URL:<a href="<%= @url.short_url %>"><%=@url.short_url %></a></p>
+<% end %>
+</content>
+
+
